@@ -1,32 +1,53 @@
 # Bijan Pourriahi
 
-**Senior Full-Stack / Platform Engineer**  
-Data Pipelines · Automation Infrastructure · Browser Automation · DevOps · Rust · Python · Rails · TypeScript
+**Senior Software Engineer - Platform Engineering, APIs & Developer Tooling**  
+Rust · Python · APIs · Integrations · Developer Tooling · AI Workflows · Production Systems
 
-I build complete software systems end-to-end: product interfaces, backend services, APIs, databases, data pipelines, orchestration systems, deployment workflows, monitoring, automation, and internal tooling.
+I build developer-facing platforms, APIs, integrations, workflow systems, and production infrastructure that make complex systems easier to develop, debug, operate, and trust.
 
-My strongest work is in complex, data-heavy products where reliability, observability, performance, and operational usefulness matter. I’m comfortable working across frontend, backend architecture, data modeling, Linux infrastructure, DevOps, production debugging, performance optimization, and systems automation.
+My strongest work is in systems where reliability, clear interfaces, reproducible workflows, observability, and operational usefulness matter: API/integration layers, CLIs, internal tools, runtime systems, data pipelines, dashboards, automation workflows, and production monitoring.
 
-I have built SaaS products, market research platforms, trading infrastructure, research systems, dashboards, browser automation platforms, browser extensions, CLIs, and backend services.
+I have built SaaS products, market research platforms, browser automation infrastructure, financial systems, research platforms, dashboards, browser extensions, CLIs, and backend services. The common thread is ownership: architecture, implementation, deployment, debugging, operations, and iteration until the system is usable in practice.
 
-Relevant work includes high-volume browser automation infrastructure, proxy/session management, account/session isolation, provider access routing, Dockerized workers, job orchestration, retries, logging, failure recovery, monitoring, and operational reliability.
+Recent work includes Rust/Python platform infrastructure where I was the primary user, so developer experience, debugging speed, fast feedback loops, and operational visibility directly shaped the architecture.
 
-Previously built automated trading infrastructure for a hedge fund, including large-scale strategy backtesting, analytics, automated strategy selection, dashboards, and cloud operations.
+## Developer Platform & Tooling
 
-Current work includes QuantBox, a Rust/Python systems platform for research infrastructure, simulation, market-data ingestion, runtime systems, and automation.
+I build systems that reduce friction around complex workflows: clear APIs, CLI tools, reproducible execution, workflow automation, evidence capture, local debugging tools, dashboards, and operational review surfaces.
 
+Recent work includes:
 
-## Trading Platform Work
+- Rust/Python runtime and platform components for replay, simulation, live evaluation, account-state tracking, risk controls, and operational review
+- CLI tools and local workflows for inspecting system state, running repeatable evaluations, and reviewing results
+- MCP interfaces and agent-facing tools for AI-assisted interaction with internal services
+- tmux-based Codex CLI / Claude Code workflows for architecture exploration, implementation, debugging, testing, documentation, and automation
+- dashboards and monitoring views that make complex runtime behavior easier to inspect and trust
 
-I built an internal futures trading workstation for managing multiple funded-style accounts from one operator surface. The system combined execution, copy trading, risk controls, account fan-out, strategy dispatch, live state monitoring, and research workflows.
+## APIs & Integrations
+
+I have built integration layers across external systems with different reliability characteristics, including REST APIs, WebSocket services, authentication flows, broker/execution APIs, market-data providers, browser automation systems, CLIs, dashboards, and internal tooling.
+
+Relevant work includes:
+
+- API and WebSocket command/control flows
+- authentication and external-provider integration handling
+- broker, execution, market-data, and provider access integrations
+- browser automation infrastructure with proxy/session management, account isolation, provider access routing, retries, logging, failure recovery, Dockerized workers, and monitoring
+- internal APIs and tools for SaaS products, research systems, dashboards, and operational workflows
+
+## Production Systems Example: Financial Infrastructure
+
+I built an internal futures execution and monitoring workstation for managing multiple live accounts from one operator surface. The system combined execution, account fan-out, risk controls, live state monitoring, strategy dispatch, replay workflows, and operational review.
+
+The important engineering problem was not trading itself. It was building a reliable platform where correctness, observability, external integrations, failure handling, and operator clarity mattered.
 
 Key capabilities:
 
-- Managed 10 accounts simultaneously from a single execution and monitoring UI
-- Copy-traded orders across account groups with per-account position, balance, drawdown, and guardrail visibility
-- Ran hundreds of strategy variants across live and replay workflows
-- Backtested thousands of strategy/day/configuration combinations with sortable strategy comparison views
-- Supported real-time backtesting, live dispatch review, account health checks, kill switches, flatten/cancel controls, and operator explanations for each action
+- Managed 10+ accounts simultaneously from a single execution and monitoring UI
+- Fan-out/copy execution across account groups with per-account position, balance, drawdown, and guardrail visibility
+- Live state monitoring, account health checks, risk controls, kill switches, flatten/cancel controls, and operator-facing explanations
+- Replayable workflows for historical simulation, live evaluation, dispatch review, and reproducible result capture
+- Strategy/configuration comparison views for reviewing system behavior across large evaluation runs
 
 ![Trading fleet dashboard](./assets/trading-fleet-dashboard.png)
 
@@ -40,35 +61,34 @@ Key capabilities:
 
 ### [QuantBox / Aikido Systematic Trading](https://github.com/bijmaxx/aikido-systematic-trading)
 
-Rust-first research, simulation, runtime, and evidence platform for systematic trading.
+Rust-first research and runtime platform combining simulation, replay, data pipelines, operational tooling, and execution workflows for systematic financial infrastructure.
 
 **What it demonstrates:**
 
-- Systems architecture
-- Rust/Python engineering
-- Simulation and evaluation
-- Data ingestion and replay
-- Runtime infrastructure
-- Risk and drawdown logic
-- Evidence capture
-- Operational tooling
+- Rust/Python platform engineering
+- Runtime and simulation architecture
+- Replayable workflows
+- API/integration design
+- Evidence capture and operational review
+- Risk/state modeling
+- Production-oriented debugging and observability
 
 ### [Vector Backtester](https://github.com/bijmaxx/vector-backtester)
 
-ClickHouse-backed cryptocurrency strategy backtester using SQL-native vectorized execution.
+ClickHouse-backed analytics and evaluation engine using SQL-native vectorized execution for high-volume historical data workflows.
 
 **What it demonstrates:**
 
 - Data modeling
 - ClickHouse analytics
 - Query optimization
-- High-volume backtesting
-- SQL-native research workflows
+- SQL-native evaluation workflows
+- High-volume data processing
 - Performance-oriented system design
 
 ### [Polymarket Trader Intelligence](https://github.com/bijmaxx/polymarket-trader-intelligence)
 
-CLI toolkit for wallet alerts, replayable market analysis, SQLite storage, and trader profile intelligence.
+CLI toolkit for wallet alerts, replayable market analysis, SQLite storage, and local intelligence workflows.
 
 **What it demonstrates:**
 
@@ -80,13 +100,13 @@ CLI toolkit for wallet alerts, replayable market analysis, SQLite storage, and t
 
 ### [Matching System](https://github.com/bijmaxx/matching-system)
 
-Explainable event-matching system for cross-platform prediction-market analysis.
+Explainable event-matching system for cross-platform market analysis.
 
 **What it demonstrates:**
 
 - Event matching
 - Data normalization
-- Explainable algorithms
+- Explainable matching logic
 - Cross-platform data modeling
 - Research tooling
 
@@ -105,31 +125,30 @@ Built complete product interfaces, dashboards, admin tools, browser extensions, 
 
 ## Core Engineering Areas
 
-- Full-stack product development
-- Frontend application development
-- Backend architecture
-- API design
+- Platform engineering and developer tooling
+- API design and external integrations
+- Rust/Python systems engineering
+- Workflow systems, CLIs, and internal tools
+- AI-assisted development workflows, MCP interfaces, and agent tooling
+- Backend architecture and service design
 - Data modeling and database design
 - Query optimization and performance tuning
-- DevOps and system administration
-- Kubernetes, Docker, Linux, AWS
-- CI/CD and deployment automation
-- Monitoring, observability, Grafana dashboards
-- SaaS products and internal platforms
-- Rails/PostgreSQL application development
-- Rust/Python systems engineering
-- Market-data and research infrastructure
-- Automation and AI-assisted workflows
+- Monitoring, observability, dashboards, and production debugging
+- DevOps, Linux systems, deployment automation, and CI/CD
+- SaaS products, operational platforms, and data-heavy systems
 
 ## Stack
 
 **Languages:** Rust, Python, Ruby, Go, TypeScript, SQL  
-**Frontend:** React, TypeScript, HTML, CSS, dashboards, browser extensions, admin tools  
+**Systems/APIs:** API design, WebSockets, REST integrations, command/control flows, CLIs, internal tools, browser tools, GraphQL ecosystem, federation patterns  
+**AI tooling:** Codex CLI, Claude Code, MCP servers/tools, agent workflows, AI-assisted debugging/review/documentation  
 **Backend:** Ruby on Rails, FastAPI, APIs, WebSockets, background jobs, service architecture, CLI systems  
 **Data:** PostgreSQL, ClickHouse, SQLite, ETL, data modeling, event logs, analytics pipelines  
-**Infrastructure:** Kubernetes, Docker, AWS, Linux, Ansible, CI/CD, sysadmin, Grafana, monitoring  
-**Domains:** SaaS, internal tools, automation, analytics, research infrastructure, trading systems, data-heavy products
+**Infrastructure:** Kubernetes, Docker, AWS, Linux, Ansible, CI/CD, sysadmin, Grafana, Prometheus, monitoring  
+**Domains:** SaaS, internal tools, automation, analytics, research infrastructure, financial systems, data-heavy products
 
-## Contact
+## Links
 
+- Portfolio: [bijmaxx.github.io](https://bijmaxx.github.io/)
+- Resume: [bijmaxx.github.io/resume.pdf](https://bijmaxx.github.io/resume.pdf)
 - Email: bijan.pourriahi@gmail.com
