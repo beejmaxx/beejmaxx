@@ -59,7 +59,7 @@ Key capabilities:
 
 ## Featured Engineering Work
 
-### [QuantBox / Aikido Systematic Trading](https://github.com/bijmaxx/aikido-systematic-trading)
+### [QuantBox / Aikido Systematic Trading](https://github.com/beejmaxx/aikido-systematic-trading)
 
 Rust-first research and runtime platform combining simulation, replay, data pipelines, operational tooling, and execution workflows for systematic financial infrastructure.
 
@@ -73,7 +73,7 @@ Rust-first research and runtime platform combining simulation, replay, data pipe
 - Risk/state modeling
 - Production-oriented debugging and observability
 
-### [Vector Backtester](https://github.com/bijmaxx/vector-backtester)
+### [Vector Backtester](https://github.com/beejmaxx/vector-backtester)
 
 ClickHouse-backed analytics and evaluation engine using SQL-native vectorized execution for high-volume historical data workflows.
 
@@ -86,7 +86,7 @@ ClickHouse-backed analytics and evaluation engine using SQL-native vectorized ex
 - High-volume data processing
 - Performance-oriented system design
 
-### [Polymarket Trader Intelligence](https://github.com/bijmaxx/polymarket-trader-intelligence)
+### [Polymarket Trader Intelligence](https://github.com/beejmaxx/polymarket-trader-intelligence)
 
 CLI toolkit for wallet alerts, replayable market analysis, SQLite storage, and local intelligence workflows.
 
@@ -98,7 +98,7 @@ CLI toolkit for wallet alerts, replayable market analysis, SQLite storage, and l
 - Replayable event storage
 - User-facing automation tools
 
-### [Matching System](https://github.com/bijmaxx/matching-system)
+### [Matching System](https://github.com/beejmaxx/matching-system)
 
 Explainable event-matching system for cross-platform market analysis.
 
@@ -149,6 +149,6 @@ Built complete product interfaces, dashboards, admin tools, browser extensions, 
 
 ## Links
 
-- Portfolio: [bijmaxx.github.io](https://bijmaxx.github.io/)
-- Resume: [bijmaxx.github.io/resume.pdf](https://bijmaxx.github.io/resume.pdf)
+- Portfolio: [beejmaxx.github.io](https://beejmaxx.github.io/)
+- Resume: [beejmaxx.github.io/resume.pdf](https://beejmaxx.github.io/resume.pdf)
 - Email: bijan.pourriahi@gmail.com
