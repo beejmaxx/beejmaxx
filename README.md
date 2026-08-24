@@ -1,104 +1,74 @@
 # Bijan Pourriahi
 
-**Systems engineer focused on reliable systems and agent infrastructure.**
+**Systems engineer building runtimes, integrations, and tools for complex,
+stateful systems.**
 
-I build around unreliable external processes: process supervision, durable
-state, cancellation and recovery, protocol boundaries, evidence capture, and
-operator-facing tools. I work primarily in Rust, Python, and TypeScript and
-have owned systems from architecture and integration through production
+I build around external processes and imperfect boundaries: durable state,
+reconciliation, cancellation and recovery, protocol design, evidence capture,
+and operator-facing controls. I work primarily in Rust, Python, and TypeScript
+and have owned systems from architecture and integration through production
 debugging and operations.
 
-My recent work applies that systems discipline to external AI agents. The goal
-is not another LLM wrapper; it is making long-running agent activity easier to
-observe, interrupt, reconcile, and trust.
+My recent work includes applying that systems discipline to external AI agents
+and agent-facing protocols. The focus is not another model wrapper; it is the
+operational infrastructure around long-running work.
 
 ## Selected work
-
-### [Agent Supervisor](https://github.com/beejmaxx/agent-supervisor)
-
-Experimental Rust infrastructure for treating external AI agents as unreliable
-external processes.
-
-- durable attempts, immutable manifests, generation fencing, and SQLite state;
-- journal-before-dispatch effects with receipts and explicit
-  `outcome_unknown` recovery;
-- hosted, managed, and external trust tiers that distinguish what the host can
-  actually guarantee;
-- Codex app-server and ACP process adapters, foreground interruption, durable
-  delegation, and an engine-neutral TUI/JSON-RPC client boundary;
-- before/after Git observations kept separate from agent claims.
-
-This is deliberately a research prototype, not a production security boundary
-or a universal agent framework. Its README documents the implemented boundary,
-adversarial tests, and rejected abstractions.
 
 ### [Aikido](https://github.com/beejmaxx/aikido-systematic-trading)
 
 Rust-first infrastructure for systematic-trading research, replay, simulation,
 runtime decisions, and evaluation.
 
-- reduces duplicated accounting behavior to a shared, event-driven one-account
-  state machine with explicit invariants;
+- unifies accounting behavior in an event-driven, one-account state machine
+  with explicit invariants;
 - turns large predicate-search spaces into staged bitset and graph search,
-  reserving canonical simulation for exact finalist verification;
-- reconciles desired exposure against observed broker state instead of treating
-  retries as repeated delta commands;
-- retains evaluation contracts, input lineage, reproducible artifacts, and
-  explicit limits on when a result is allowed to influence deployment.
+  reserving canonical simulation for finalist verification;
+- reconciles desired exposure against observed broker state and retains input
+  lineage, evaluation contracts, and reproducible artifacts.
+
+### [Agent Supervisor](https://github.com/beejmaxx/agent-supervisor)
+
+A Rust research prototype for supervising external AI agents as long-running,
+unreliable processes.
+
+- models durable attempts, interruption, generation fencing, and SQLite-backed
+  recovery;
+- records effects before dispatch, preserves receipts, and represents ambiguous
+  outcomes explicitly;
+- distinguishes hosted, managed, and external authority while keeping observed
+  workspace changes separate from agent claims.
+
+It is an experiment in lifecycle, authority, and evidence—not a production
+security boundary or a universal agent framework.
 
 ### [MCPHub RS](https://github.com/beejmaxx/mcphub-rs)
 
-Rust-native MCP gateway and capability-control experiment.
-
-- supervises a real stdio MCP child and exposes modern Streamable HTTP;
-- bounds frames, requests, concurrency, stderr retention, and shutdown;
-- propagates cancellation and owns child-process cleanup;
-- validates origins, exact routes, structured results, and advertised schemas;
-- records capability routing, policy decisions, runtime links, and effects in
-  SQLite.
+A Rust-native MCP gateway that supervises stdio servers behind bounded
+Streamable HTTP, propagates cancellation, and owns child-process cleanup. It
+validates routes, origins, schemas, and structured results while recording
+capability routing and execution decisions in SQLite.
 
 ### [Polymarket MCP](https://github.com/beejmaxx/polymarket-mcp-rs)
 
-A self-contained Rust MCP server that turns live market APIs into bounded,
-typed agent capabilities.
-
-- separates public research, realtime recording, and authenticated trading
-  into explicit tool profiles;
-- removes hidden tools from both discovery and dispatch, while mutation
-  requires an additional opt-in gate and per-operation confirmation;
-- preserves decimal financial values and 256-bit identifiers across JSON;
-- records observed realtime state and dropped updates in SQLite without
-  presenting local replay as complete exchange history;
-- ships installers, package-manager manifests, release artifacts, SBOMs,
-  production canaries, and CI across its supported surfaces.
+A self-contained Rust MCP server that exposes live market data, recording, and
+authenticated trading through explicit capability profiles. Mutation requires
+separate opt-in and per-operation confirmation; financial values and large
+identifiers remain exact across the JSON boundary.
 
 ### [HTTP Bot Defense Lab](https://github.com/beejmaxx/http-bot-defense-lab)
 
-A synthetic Go environment for request-time policy, longer-window behavioral
-correlation, adversarial replay, analyst operations, and intervention review.
-
-- makes assumptions, observable boundaries, and validation requirements
-  explicit rather than presenting synthetic results as production accuracy;
-- replays candidate and shadow policy against the same deterministic event
-  stream;
-- keeps false positives, missed abuse, review capacity, user friction, and
-  detector failure modes visible;
-- includes regression scenarios for timing jitter, cover traffic, identifier
-  rotation, coordination, and legitimate high-intensity use.
+A synthetic Go environment for request-time policy, behavioral correlation,
+adversarial replay, analyst operations, and intervention review. It keeps false
+positives, missed abuse, review capacity, and detector limits visible rather
+than presenting synthetic results as production accuracy.
 
 ### [Depthfield](https://github.com/beejmaxx/depthfield)
 
-A backendless WebGPU market-depth instrument driven by live public exchange
-data.
-
-- reconstructs the order book from REST snapshots and sequenced WebSocket
-  diffs, detecting gaps instead of silently continuing;
-- moves ingestion and reconstruction into a Web Worker and renders history in
-  one GPU pass;
-- retains bounded multi-resolution history in IndexedDB and exports portable
-  recordings;
-- includes a public live demo that works without an account, API key, or
-  application server.
+A backendless WebGPU market-depth instrument driven by public exchange data. It
+reconstructs the order book from REST snapshots and sequenced WebSocket diffs,
+detects gaps, retains bounded history in IndexedDB, and renders it in one GPU
+pass.
 
 ## Production background
 
@@ -113,9 +83,8 @@ Across those domains, the recurring work has been similar:
 - turn ambiguous operational requirements into explicit interfaces and state;
 - integrate external systems with different failure and authentication models;
 - make retries, partial failure, cancellation, and recovery visible;
-- build tools that shorten the loop between an incident, an explanation, and a
-  verified fix;
-- preserve enough evidence that another engineer can inspect what happened.
+- shorten the loop between an incident, an explanation, and a verified fix;
+- preserve enough evidence for another engineer to inspect what happened.
 
 ## Tools and languages
 
