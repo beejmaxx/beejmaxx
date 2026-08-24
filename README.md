@@ -1,7 +1,6 @@
 # Bijan Pourriahi
 
-**Systems engineer focused on reliable agent infrastructure, developer tooling,
-and stateful execution systems.**
+**Systems engineer focused on reliable systems and agent infrastructure.**
 
 I build around unreliable external processes: process supervision, durable
 state, cancellation and recovery, protocol boundaries, evidence capture, and
@@ -9,7 +8,7 @@ operator-facing tools. I work primarily in Rust, Python, and TypeScript and
 have owned systems from architecture and integration through production
 debugging and operations.
 
-My recent work applies that systems discipline to autonomous agents. The goal
+My recent work applies that systems discipline to external AI agents. The goal
 is not another LLM wrapper; it is making long-running agent activity easier to
 observe, interrupt, reconcile, and trust.
 
@@ -17,7 +16,7 @@ observe, interrupt, reconcile, and trust.
 
 ### [Agent Supervisor](https://github.com/beejmaxx/agent-supervisor)
 
-Experimental Rust infrastructure for treating autonomous agents as unreliable
+Experimental Rust infrastructure for treating external AI agents as unreliable
 external processes.
 
 - durable attempts, immutable manifests, generation fencing, and SQLite state;
@@ -33,6 +32,31 @@ This is deliberately a research prototype, not a production security boundary
 or a universal agent framework. Its README documents the implemented boundary,
 adversarial tests, and rejected abstractions.
 
+### [Aikido](https://github.com/beejmaxx/aikido-systematic-trading)
+
+Rust-first infrastructure for systematic-trading research, replay, simulation,
+runtime decisions, and evaluation.
+
+- reduces duplicated accounting behavior to a shared, event-driven one-account
+  state machine with explicit invariants;
+- turns large predicate-search spaces into staged bitset and graph search,
+  reserving canonical simulation for exact finalist verification;
+- reconciles desired exposure against observed broker state instead of treating
+  retries as repeated delta commands;
+- retains evaluation contracts, input lineage, reproducible artifacts, and
+  explicit limits on when a result is allowed to influence deployment.
+
+### [MCPHub RS](https://github.com/beejmaxx/mcphub-rs)
+
+Rust-native MCP gateway and capability-control experiment.
+
+- supervises a real stdio MCP child and exposes modern Streamable HTTP;
+- bounds frames, requests, concurrency, stderr retention, and shutdown;
+- propagates cancellation and owns child-process cleanup;
+- validates origins, exact routes, structured results, and advertised schemas;
+- records capability routing, policy decisions, runtime links, and effects in
+  SQLite.
+
 ### [Polymarket MCP](https://github.com/beejmaxx/polymarket-mcp-rs)
 
 A self-contained Rust MCP server that turns live market APIs into bounded,
@@ -47,31 +71,6 @@ typed agent capabilities.
   presenting local replay as complete exchange history;
 - ships installers, package-manager manifests, release artifacts, SBOMs,
   production canaries, and CI across its supported surfaces.
-
-### [MCPHub RS](https://github.com/beejmaxx/mcphub-rs)
-
-Rust-native MCP gateway and capability-control experiment.
-
-- supervises a real stdio MCP child and exposes modern Streamable HTTP;
-- bounds frames, requests, concurrency, stderr retention, and shutdown;
-- propagates cancellation and owns child-process cleanup;
-- validates origins, exact routes, structured results, and advertised schemas;
-- records capability routing, policy decisions, runtime links, and effects in
-  SQLite.
-
-### [engine-sim-rs](https://github.com/beejmaxx/engine-sim-rs)
-
-A safe-Rust port of a coupled piston-engine simulation, scripting runtime,
-audio pipeline, and renderer-independent model.
-
-- keeps the upstream C++ implementation as a behavioral oracle instead of
-  claiming semantic equivalence by inspection;
-- separates platform-independent simulation, audio synthesis, device output,
-  rendering math, CLI, and WebAssembly boundaries;
-- compares deterministic Rust traces against C++ fixtures across engine,
-  solver, scripting, and audio behavior;
-- exposes a backendless browser utility while retaining a headless testable
-  core.
 
 ### [HTTP Bot Defense Lab](https://github.com/beejmaxx/http-bot-defense-lab)
 
