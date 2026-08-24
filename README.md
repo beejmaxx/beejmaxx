@@ -33,6 +33,21 @@ This is deliberately a research prototype, not a production security boundary
 or a universal agent framework. Its README documents the implemented boundary,
 adversarial tests, and rejected abstractions.
 
+### [Polymarket MCP](https://github.com/beejmaxx/polymarket-mcp-rs)
+
+A self-contained Rust MCP server that turns live market APIs into bounded,
+typed agent capabilities.
+
+- separates public research, realtime recording, and authenticated trading
+  into explicit tool profiles;
+- removes hidden tools from both discovery and dispatch, while mutation
+  requires an additional opt-in gate and per-operation confirmation;
+- preserves decimal financial values and 256-bit identifiers across JSON;
+- records observed realtime state and dropped updates in SQLite without
+  presenting local replay as complete exchange history;
+- ships installers, package-manager manifests, release artifacts, SBOMs,
+  production canaries, and CI across its supported surfaces.
+
 ### [MCPHub RS](https://github.com/beejmaxx/mcphub-rs)
 
 Rust-native MCP gateway and capability-control experiment.
@@ -54,18 +69,33 @@ The relevant engineering is the boundary between research evidence and runtime
 state: reproducible inputs, explicit provenance, typed strategy contracts,
 account/risk modeling, and integrations whose failures must remain visible.
 
-### [rithmic-rs](https://github.com/beejmaxx/rithmic-rs)
+### [HTTP Bot Defense Lab](https://github.com/beejmaxx/http-bot-defense-lab)
 
-Unofficial asynchronous Rust client for the Rithmic R Protocol API. It uses
-actor-style Tokio tasks and channels for order, market-data, PnL, and history
-connections, with explicit connection strategies, health events, heartbeat
-handling, and reconnection behavior.
+A synthetic Go environment for request-time policy, longer-window behavioral
+correlation, adversarial replay, analyst operations, and intervention review.
 
-### [codex-recent](https://github.com/beejmaxx/codex-recent)
+- makes assumptions, observable boundaries, and validation requirements
+  explicit rather than presenting synthetic results as production accuracy;
+- replays candidate and shadow policy against the same deterministic event
+  stream;
+- keeps false positives, missed abuse, review capacity, user friction, and
+  detector failure modes visible;
+- includes regression scenarios for timing jitter, cover traffic, identifier
+  rotation, coordination, and legitimate high-intensity use.
 
-A small shell/fzf tool for finding and resuming recent Codex CLI conversations.
-It is intentionally narrow: one recurring developer-workflow problem, a fast
-local solution, and no unnecessary service or framework.
+### [Depthfield](https://github.com/beejmaxx/depthfield)
+
+A backendless WebGPU market-depth instrument driven by live public exchange
+data.
+
+- reconstructs the order book from REST snapshots and sequenced WebSocket
+  diffs, detecting gaps instead of silently continuing;
+- moves ingestion and reconstruction into a Web Worker and renders history in
+  one GPU pass;
+- retains bounded multi-resolution history in IndexedDB and exports portable
+  recordings;
+- includes a public live demo that works without an account, API key, or
+  application server.
 
 ## Production background
 
