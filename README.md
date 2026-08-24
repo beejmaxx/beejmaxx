@@ -59,15 +59,19 @@ Rust-native MCP gateway and capability-control experiment.
 - records capability routing, policy decisions, runtime links, and effects in
   SQLite.
 
-### [Aikido Systematic Trading](https://github.com/beejmaxx/aikido-systematic-trading)
+### [engine-sim-rs](https://github.com/beejmaxx/engine-sim-rs)
 
-Rust-first systematic-research and execution workspace spanning deterministic
-backtests, predicate sweeps, evidence retention, replay, runtime checks, and
-operator-facing inspection surfaces.
+A safe-Rust port of a coupled piston-engine simulation, scripting runtime,
+audio pipeline, and renderer-independent model.
 
-The relevant engineering is the boundary between research evidence and runtime
-state: reproducible inputs, explicit provenance, typed strategy contracts,
-account/risk modeling, and integrations whose failures must remain visible.
+- keeps the upstream C++ implementation as a behavioral oracle instead of
+  claiming semantic equivalence by inspection;
+- separates platform-independent simulation, audio synthesis, device output,
+  rendering math, CLI, and WebAssembly boundaries;
+- compares deterministic Rust traces against C++ fixtures across engine,
+  solver, scripting, and audio behavior;
+- exposes a backendless browser utility while retaining a headless testable
+  core.
 
 ### [HTTP Bot Defense Lab](https://github.com/beejmaxx/http-bot-defense-lab)
 
