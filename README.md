@@ -97,5 +97,3 @@ Across those domains, the recurring work has been similar:
 ## Links
 
 - [Technical portfolio and case studies](https://beejmaxx.github.io/)
-- [Resume](https://beejmaxx.github.io/resume.pdf)
-- [bijan.pourriahi@gmail.com](mailto:bijan.pourriahi@gmail.com)
