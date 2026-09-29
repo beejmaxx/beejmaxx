@@ -1,5 +1,3 @@
-# Bijan Pourriahi
-
 **Systems engineer building runtimes, integrations, and tools for complex,
 stateful systems.**
 
