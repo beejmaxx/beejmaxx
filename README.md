@@ -3,7 +3,7 @@ stateful systems.**
 
 I build around external processes and imperfect boundaries: durable state,
 reconciliation, cancellation and recovery, protocol design, evidence capture,
-and operator-facing controls. I work primarily in Rust, Python, and TypeScript
+and operator-facing controls. I work primarily in Rust, Python, Ruby, and TypeScript
 and have owned systems from architecture and integration through production
 debugging and operations.
 
